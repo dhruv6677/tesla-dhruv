@@ -18,7 +18,15 @@
             <li class="nav-item"> <a class="nav-link" href="#">Blog</a> </li>
           </ul>
           <form class="d-flex">
-            <a href="users/sign_up" role="button" class="btn btn-outline-secondary f-l-button-bold sh-filter-button me-3">Customer Log In</a> 
+           
+            <% if user_signed_in? %>
+  
+  
+            <%= link_to "Customer Log Out", destroy_user_session_path, method: :delete, class:"btn btn-outline-secondary f-l-button-bold sh-filter-button me-3" %>
+          <% else %>
+           
+            <%= link_to "Customer Log In ", new_user_session_path, class:"btn btn-outline-secondary f-l-button-bold sh-filter-button me-3"%>
+          <% end %></a> 
             <a href="index.html" role="button" class="btn btn-primary  sh-filter-button f-l-button-bold">Browse Cars</a>
           </form>
         </div>
